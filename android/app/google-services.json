@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "169073302535",
+    "project_id": "projectmehema",
+    "storage_bucket": "projectmehema.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169073302535:android:bdb172566a9432a1261ea2",
+        "android_client_info": {
+          "package_name": "com.example.projectmehema"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbu6M7uXtrdd9VKgPa80hTIlY_a7_29jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

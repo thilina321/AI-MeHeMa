@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:projectmehema/home.dart';
 import 'package:projectmehema/reg.dart';
 
+final _formKey = GlobalKey<FormState>();
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -13,6 +15,18 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  String? validateEmail(String? email) {
+    RegExp emailRegex = RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
+    final isEmailValid = emailRegex.hasMatch(email ?? '');
+    if(!isEmailValid) {
+      return 'Please enter a valid email';
+    }
+    return null;
+  }
+
+  String errorMessage = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
@@ -22,79 +36,130 @@ class _LoginState extends State<Login> {
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(30),
-          child: ListView(
-            shrinkWrap: true,
-            children: [
-              const Text('Email'),
-              const SizedBox(
-                height: 5,
-              ),
-              TextField(
-                controller: emailController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter Email',
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                const Text('Email'),
+                const SizedBox(
+                  height: 5,
                 ),
-              ),
-
-              const SizedBox(
-                height: 10,
-              ),
-              const Text('Password'),
-              const SizedBox(
-                height: 5,
-              ),
-              TextField(
-                obscureText: true,
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter Password',
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-               ElevatedButton(
-  
-                
-                onPressed: () {
-                  FirebaseAuth.instance.signInWithEmailAndPassword(
-                    email: emailController.text, 
-                    password: passwordController.text)
-                  .then((value) {
-                    print("Login Successfully");
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
-                  }).onError((error, stackTrace) {
-                    print("Error ${error.toString()}");
-                });
-                  
-                   
-                  print(emailController.text);
-                  print(passwordController.text);
-                  
-                },
-
-                style: ElevatedButton.styleFrom(minimumSize:Size (20, 50 ))
-                ,
-
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                    fontFamily: 'arial',
-                    fontSize: 18,
-            
+                TextFormField(
+                  controller: emailController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter Email',
                   ),
-                  
+                  validator: validateEmail,
+                  autovalidateMode: AutovalidateMode.onUserInteraction, 
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              signUpOption(),
-            ],
-        ),
+          
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text('Password'),
+                const SizedBox(
+                  height: 5,
+                ),
+                TextFormField(
+                  obscureText: true,
+                  controller: passwordController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter Password',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter the password';
+                    } else if (value.length < 6) {
+                      return 'Password must be atleast 6 characters!';
+                    } else if (value.length > 15) {
+                      return 'Password mustn\'t be more than 15 characters' ;
+                    }
+                    return null;
+                  },
+                  autovalidateMode: AutovalidateMode.onUserInteraction, 
+                
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+
+                Center(
+                  child: Text(
+                    errorMessage,
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                 ElevatedButton(
+            
+                  
+                  onPressed: () async {
+                    if(_formKey.currentState!.validate()) {
+                      try {
+                        FirebaseAuth.instance.signInWithEmailAndPassword(
+                          email: emailController.text, 
+                          password: passwordController.text)
+                        .then((value) {
+                          print("Login Successfully");
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => HomeScreen()));
+                        }).onError((error, stackTrace) {
+                          print("${error.toString()}");
+                          setState(() {
+                            errorMessage = 'Invalid email or password';
+                          });
+                        });
+                      } catch (e) {
+                        print(e);
+                      }
+                    };
+                  //   FirebaseAuth.instance.signInWithEmailAndPassword(
+                  //     email: emailController.text, 
+                  //     password: passwordController.text)
+                  //   .then((value) {
+                  //     print("Login Successfully");
+                  //     Navigator.push(context,
+                  //       MaterialPageRoute(builder: (context) => HomeScreen()));
+                  //   }).onError((error, stackTrace) {
+                  //     print("Error ${error.toString()}");
+                  // });
+                    
+                     
+                    print(emailController.text);
+                    print(passwordController.text);
+
+                
+                    
+                  },
+          
+                  style: ElevatedButton.styleFrom(minimumSize:Size (20, 50 ))
+                  ,
+          
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                      fontFamily: 'arial',
+                      fontSize: 18,
+              
+                    ),
+                    
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                signUpOption(),
+              ],
+                  ),
+          ),
       ),
     ),
     );

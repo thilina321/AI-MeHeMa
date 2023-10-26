@@ -117,14 +117,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TextButton(
-          onPressed: () {
-            FirebaseAuth.instance.signOut().then((value){
-              print("Signed Out");
+        ElevatedButton(
+          onPressed: () async {
+            try {
+              await FirebaseAuth.instance.signOut().then((value){
               Navigator.push(context,
               MaterialPageRoute(builder: (context) => Login()));
             });
-            
+            } catch (e) {
+              print(e);
+            }
+            // await FirebaseAuth.instance.signOut().then((value){
+            //   print("Signed Out");
+            //   Navigator.push(context,
+            //   MaterialPageRoute(builder: (context) => Login()));
+            // });
+            setState(() {
+              // ignore: avoid_print
+              print("Signed Out");
+            });
           },
           child: const Text('Logout'),
         ),

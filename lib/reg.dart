@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:projectmehema/customShape.dart';
 import 'package:projectmehema/home.dart';
 import 'package:projectmehema/login.dart';
 
@@ -34,7 +35,15 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        toolbarHeight: 150,
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,        
+        flexibleSpace: ClipPath(
+          clipper: CustomShape(), child: Container(height: 250, width: MediaQuery.of(context).size.width,
+          color: const Color.fromARGB(255, 0, 140, 255),
+          child: Center(child: Text("Sign Up", style: TextStyle(color: Colors.white, fontSize: 25),)),
+          ),
+        )
       ),
       //for the form to be in center
       body: Center(
@@ -237,4 +246,4 @@ class _RegisterPageState extends State<RegisterPage> {
       ],
     );
   }
-}
+}//project

@@ -60,8 +60,7 @@ class _LoginState extends State<Login> {
                     border: OutlineInputBorder(),
                     hintText: 'Enter Email',
                   ),
-                  validator: validateEmail,
-                  autovalidateMode: AutovalidateMode.onUserInteraction, 
+                  validator: validateEmail, 
                 ),
           
                 const SizedBox(
@@ -87,8 +86,7 @@ class _LoginState extends State<Login> {
                       return 'Password mustn\'t be more than 15 characters' ;
                     }
                     return null;
-                  },
-                  autovalidateMode: AutovalidateMode.onUserInteraction, 
+                  }, 
                 
                 ),
                 const SizedBox(

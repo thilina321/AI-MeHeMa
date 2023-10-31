@@ -1,3 +1,4 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:projectmehema/customShape.dart';
@@ -37,7 +38,7 @@ class _LoginState extends State<Login> {
         flexibleSpace: ClipPath(
           clipper: CustomShape(), child: Container(height: 250, width: MediaQuery.of(context).size.width,
           color: const Color.fromARGB(255, 0, 140, 255),
-          child: Center(child: Text("Login", style: TextStyle(color: Colors.white, fontSize: 25),)),
+          child: Center(child: Text("f,d.a fjuq", style: TextStyle(color: Colors.white, fontSize: 50, fontFamily: 'FM-Gemunu'),)), //Login AppBar
           ),
         ),
       ),
@@ -50,7 +51,7 @@ class _LoginState extends State<Login> {
             child: ListView(
               shrinkWrap: true,
               children: [
-                const Text('Email'),
+                const Text('B ;emE,',style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 20, fontFamily: 'FM-Bindumathi')), // Email
                 const SizedBox(
                   height: 5,
                 ),
@@ -58,7 +59,7 @@ class _LoginState extends State<Login> {
                   controller: emailController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Enter Email',
+                    hintText: 'B ;emE, we;=<;a lrkak', hintStyle: TextStyle(color: Color.fromARGB(120, 0, 0, 0), fontSize: 15, fontFamily: 'FM-Bindumathi') //Enter Email
                   ),
                   validator: validateEmail,
                   autovalidateMode: AutovalidateMode.onUserInteraction, 
@@ -67,7 +68,7 @@ class _LoginState extends State<Login> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text('Password'),
+                const Text('uqr moh', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 20, fontFamily: 'FM-Bindumathi')), // Password
                 const SizedBox(
                   height: 5,
                 ),
@@ -76,7 +77,7 @@ class _LoginState extends State<Login> {
                   controller: passwordController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Enter Password',
+                    hintText: 'uqr moh we;=<;a lrkak', hintStyle: TextStyle(color: Color.fromARGB(120, 0, 0, 0), fontSize: 15, fontFamily: 'FM-Bindumathi') //enter Password
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -100,7 +101,7 @@ class _LoginState extends State<Login> {
                     errorMessage,
                     style: TextStyle(
                       color: Colors.red,
-                      fontSize: 16,
+                      fontSize: 16, fontFamily: 'FM-Bindumathi',
                     ),
                   ),
                 ),
@@ -153,10 +154,10 @@ class _LoginState extends State<Login> {
                   ,
           
                   child: Text(
-                    'Login',
+                    'f,d.a fjuq', //login button
                     style: TextStyle(
-                      fontFamily: 'arial',
-                      fontSize: 18,
+                      fontFamily: 'FM-Gemunu',
+                      fontSize: 30,
               
                     ),
                     
@@ -177,7 +178,7 @@ class _LoginState extends State<Login> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Don\'t have an account?'),
+        const Text('.sKqula kE fkao@', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 20, fontFamily: 'FMDerana'),),//don't have an account
         TextButton(
           onPressed: () {
             Navigator.push(
@@ -187,7 +188,7 @@ class _LoginState extends State<Login> {
               ),
             );
           },
-          child: const Text('Sign Up'),
+          child: const Text('tfykï youq',style: TextStyle(color: Color.fromARGB(255, 0, 128, 255), fontSize: 15, fontFamily: 'FM-Bindumathi'),),
         ),
       ],
     );

@@ -26,11 +26,14 @@ class _SelectBotState extends State<SelectBot> {
               style: TextStyle(
               fontFamily: 'arial',
               fontSize: 18,)
-             )
+             ),
+             style: ElevatedButton.styleFrom(
+                minimumSize: Size(180, 80),
+              ),
             ),
           ],
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 40),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -41,7 +44,10 @@ class _SelectBotState extends State<SelectBot> {
               style: TextStyle(
               fontFamily: 'arial',
               fontSize: 18,)
-             )
+             ),
+             style: ElevatedButton.styleFrom(
+                minimumSize: Size(180, 80),
+              ),
             ),
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectmehema/listening/audio/Rmusic.dart';
 
 class SecondInterface extends StatelessWidget {
   @override
@@ -17,7 +18,8 @@ class SecondInterface extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=> const AudioList()));
                   },
                   child: Text('Relaxing' , style: TextStyle(fontSize: 20), ),
                   style: ElevatedButton.styleFrom(

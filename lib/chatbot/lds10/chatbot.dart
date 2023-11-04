@@ -12,10 +12,10 @@ class _ChatBotState extends State<ChatBot> {
   List<String> answers = List.filled(10, '');
 
   List<String> questions = [
-    "Question 1: What is your favorite color?",
-    "Question 2: What is your favorite animal?",
-    "Question 3: What is your favorite food?",
-    "Question 4: What is your favorite movie?",
+    "Tn lK.dgqfjka miq jkafka o@", //Kanagatuwa
+    "wkd.;h ms<sn|j Tnf.a n,dfmdfrd;a;=j flfiao@",//Anagathaya
+    "Tn mrdcs;fhl= fia yef`.ao@", //Parajithaya
+    "Tn lrk jev lghq;= .ek Tng oefkkafka flfiao@",//Wadakatayuthu
     "Question 5: What is your favorite song?",
     "Question 6: What is your favorite book?",
     "Question 7: What is your favorite sport?",
@@ -25,10 +25,10 @@ class _ChatBotState extends State<ChatBot> {
   ];
 
   List<List<String>> options = [
-    ["Red", "Blue", "Green", "Yellow"],
-    ["Dog", "Cat", "Elephant", "Lion"],
-    ["Pizza", "Pasta", "Burger", "Sandwich"],
-    ["Titanic", "Avengers", "Joker", "Parasite"],
+    ["uu lK.dgqfjka miq fkdfjñ'", "uu lK.dgqfjka miq fjñ'", "uu .e,ùug fkdyels lK.gqjlska yeu úgu fmf<ñ'", "uu flfiaj;a bjiSug fkdkels lK.dgqj,ska yeu úgu fmf,ñ'"],//Kanagatuwa
+    ["ud yg wkd.;h ms<sn|j jeä n,dfmdfrd;a;=lv jQ .;shla ke;'", "ud yg wkd.;h ms<sn|j jeä n,dfmdfrd;a;=lv jQ .;shla we;'", "ud yg wkd.;fha i;=gq ùug lsisjla ke;s nj yef.a'", "ud yg wkd.;h b;d wÿre nj;a th lsisfia;au fydo w;g yeßug fkdyels nj;a yef.a'"], //Anagathaya
+    ["uu mrð;fhla hehs fkdyef.a'", "uu idudkah wfhl=g jv mrð;fhla hehs  yef.a'", "w;S;h foi yÍ n,k l, uq¿ ðú;h mqrdu mrdð;h biau;= ù we;'", "uu mQ¾K mrð;fhl= hhs yef.a'"],//Parajithaya
+    ["uu lrk lghq;= j,sk ,nk i;=g fmr mßÈu fõ'", "uu lrk lghq;= j,ska ,nk i;=g fmr mßäu fkd,efí'", "uu lrk lsisu fohlska kshu i;=gla ;j ÿrg;a fkd,efí'", "ug iEu fohlau fkdi;=gg fyda tmdùu f.k foa'"],//Wadakatayuthu
     ["Shape of You", "Believer", "Faded", "Perfect"],
     ["Harry Potter", "Twilight", "Hunger Games", "Divergent"],
     ["Cricket", "Football", "Basketball", "Tennis"],
@@ -118,7 +118,7 @@ class _ChatBotState extends State<ChatBot> {
                                 questions[currentQuestion],
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'FM-Bindumathi',
                                   fontSize: 26,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -153,7 +153,7 @@ class _ChatBotState extends State<ChatBot> {
                         option,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'Readex Pro',
+                          fontFamily: 'FMDerana',
                           color: Colors.white,
                           fontSize: 20,
                         ),

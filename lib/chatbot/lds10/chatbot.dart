@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projectmehema/chatbot/selectBot.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ChatBot extends StatefulWidget {
   @override
@@ -83,41 +84,86 @@ class _ChatBotState extends State<ChatBot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Chatbot IDS10")),
+      appBar: AppBar(
+        title: Align(
+          alignment: AlignmentDirectional(-1.00, -1.00),
+          child: Text(
+            'ChatBot IDS10',
+            style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: Colors.white,
+                  fontSize: 22,
+            ),
+          ),
+        ),
+      ),     
       body: SafeArea(
         child: Column(
-          children: <Widget>[
-          const SizedBox(height: 10,),
-          Text(questions[currentQuestion]),
-          const SizedBox(height: 10,),
-          const Divider(
-            height: 1.0,
-          ),
-          const SizedBox(height: 10,),
-          for (var option in options[currentQuestion])
-            TextButton(
-              style: TextButton.styleFrom(
-                primary: Colors.black,
-                //backgroundColor: Colors.grey[300],
-                onSurface: Colors.grey,
-                padding: const EdgeInsets.all(20),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              const SizedBox(height: 20),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(-1.00, -1.00),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          child: Row(
+                            children: [
+                              AutoSizeText(
+                                questions[currentQuestion],
+                                textAlign: TextAlign.justify,
+                                style: TextStyle(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 26,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                minFontSize: 20,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],  
+                  ),
+                ],
               ),
-              onPressed: () {
-                setState(() {
-                  answers[currentQuestion] = option;
-                  nextQuestion();
-              
-                });
-              },
-              child: Text(option),
-            ),
-          ],
-        ),
-      ),
-      
-    );
-  }
-}
+              for (var option in options[currentQuestion])
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                  child: Container(
+                    width: 225,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 57, 145, 218), 
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: TextButton( 
+                      onPressed: () {
+                        setState(() {
+                          answers[currentQuestion] = option;
+                          nextQuestion();
+                        });
+                      },
+                      child: Text(
+                        option,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),  
+          ),
+        );
+      }
+    }

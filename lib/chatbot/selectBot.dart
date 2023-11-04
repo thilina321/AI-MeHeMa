@@ -22,7 +22,7 @@ class _SelectBotState extends State<SelectBot> {
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => ChatBot()));
             }, child: 
-            Text("Chatbot IDS10", 
+            Text("Chatbot AI MeHeMa", 
               style: TextStyle(
               fontFamily: 'arial',
               fontSize: 18,)

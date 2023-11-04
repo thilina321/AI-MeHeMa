@@ -12,16 +12,16 @@ class _ChatBotState extends State<ChatBot> {
   List<String> answers = List.filled(10, '');
 
   List<String> questions = [
-    "Tn lK.dgqfjka miq jkafka o@", //Kanagatuwa
-    "wkd.;h ms<sn|j Tnf.a n,dfmdfrd;a;=j flfiao@",//Anagathaya
-    "Tn mrdcs;fhl= fia yef`.ao@", //Parajithaya
-    "Tn lrk jev lghq;= .ek Tng oefkkafka flfiao@",//Wadakatayuthu
-    "Tng jroldrS ye`.Sula oefka o@",//Waradakaraya
-    "Tn o`vqjula úÈk njla yef`.a o@",//Dandanaya
-    "Tng Tn .ek we;s u;h@",//Obe Mathaya
-    "Tng cSj;a úu ms<sn`oj yef`.kafka flfiao@",//SiyaDivi_nasa_Ganeema
-    "Tn y`vkjdo@",//Farcry_3
-    "Tnf.a fmkqu flfia o@",//Kathai_Monster
+    "1 Tn lK.dgqfjka miq jkafka o@", //Kanagatuwa
+    "2 wkd.;h ms<sn|j Tnf.a n,dfmdfrd;a;=j flfiao@",//Anagathaya
+    "3 Tn mrdcs;fhl= fia yef`.ao@", //Parajithaya
+    "4 Tn lrk jev lghq;= .ek Tng oefkkafka flfiao@",//Wadakatayuthu
+    "5 Tng jroldrS ye`.Sula oefka o@",//Waradakaraya
+    "6 Tn o`vqjula úÈk njla yef`.a o@",//Dandanaya
+    "7 Tng Tn .ek we;s u;h@",//Obe Mathaya
+    "8 Tng cSj;a úu ms<sn`oj yef`.kafka flfiao@",//SiyaDivi_nasa_Ganeema
+    "9 Tn y`vkjdo@",//Farcry_3
+    "10 Tnf.a fmkqu flfia o@",//Kathai_Monster
   ];
 
   List<List<String>> options = [
@@ -61,7 +61,8 @@ class _ChatBotState extends State<ChatBot> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               for (var i = 0; i < questions.length; i++)
-                Text("${questions[i]} ${answers[i]}"),
+                Text("${questions[i]} ${answers[i]}",
+                  style: TextStyle(fontFamily: 'FM-Bindumathi',fontSize: 15)),
 
             ],
           ),
@@ -88,7 +89,7 @@ class _ChatBotState extends State<ChatBot> {
         title: Align(
           alignment: AlignmentDirectional(-1.00, -1.00),
           child: Text(
-            'ChatBot IDS10',
+            'AI MeHeMa Chatbot',
             style: TextStyle(
                   fontFamily: 'Outfit',
                   color: Colors.white,
@@ -116,13 +117,13 @@ class _ChatBotState extends State<ChatBot> {
                             children: [
                               AutoSizeText(
                                 questions[currentQuestion],
-                                textAlign: TextAlign.justify,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'FM-Bindumathi',
                                   fontSize: 26,
                                   fontWeight: FontWeight.bold,
                                 ),
-                                minFontSize: 20,
+                                minFontSize: 10,
                               ),
                             ],
                           ),

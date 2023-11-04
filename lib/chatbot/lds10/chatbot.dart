@@ -103,17 +103,17 @@ class _ChatBotState extends State<ChatBot> {
             mainAxisSize: MainAxisSize.max,
             children: [
               const SizedBox(height: 20),
-              Row(
+              Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Row(
+                  Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
                         alignment: AlignmentDirectional(-1.00, -1.00),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                          child: Row(
+                          child: Column(
                             children: [
                               AutoSizeText(
                                 questions[currentQuestion],

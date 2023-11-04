@@ -25,7 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 36, 178, 230),
               borderRadius: const BorderRadius.only(
-                bottomRight: Radius.circular(50),
+                bottomRight: Radius.circular(200),
+                bottomLeft: Radius.circular(200),
               ),
             ),
             child: Column(
@@ -33,12 +34,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 50),
                 ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 30),
-                  title: Text('Hello User!', style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: Color.fromARGB(255, 255, 255, 255)
-                  )),
-                  subtitle: Text('Have A Nice Day', style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  title: Center(
+                    child: Text('Hello Welcome!', style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontWeight: FontWeight.bold,
+                    ))
+                  ),
+                  subtitle: Center( 
+                    child: Text('Have A Nice Day', style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Colors.white54
-                  )),
+                    ))
+                  ),
                   // trailing: const CircleAvatar(
                   //   radius: 30,
                   //   backgroundImage: AssetImage(''),
@@ -54,9 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 255, 255, 255),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(200)
-                )
+                // borderRadius: BorderRadius.only(
+                //     topLeft: Radius.circular(200)
+                // )
               ),
               child: GridView.count(
                 shrinkWrap: true,
@@ -65,28 +71,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisSpacing: 40,
                 mainAxisSpacing: 30,
                 children: [
-                  itemDashboard('Videos', CupertinoIcons.play_rectangle, Colors.deepOrange),
-                  itemDashboard('Mucis', CupertinoIcons.music_note, Colors.green),
-                  //itemDashboard('Talk to me', CupertinoIcons.person_2, Colors.purple),
-                  //itemDashboard('Chatbot', CupertinoIcons.chat_bubble_2, Colors.brown),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SelectListen()));
-                    },
-                    child: const Text('Mindful Listening'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SelectBot()));
-                    },
-                    child: const Text('Chatbot'),
-                  ),
-                  itemDashboard('Exersice', CupertinoIcons.sportscourt, Colors.indigo),
-                  itemDashboard('Game', CupertinoIcons.gamecontroller, Colors.pinkAccent),
-                  itemDashboard('Upload', CupertinoIcons.add_circled, Colors.teal),
-                  itemDashboard('About', CupertinoIcons.question_circle, Colors.blue),
+                  itemDashboard('Chatbot', CupertinoIcons.chat_bubble_2, Colors.purple, () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const SelectBot()));
+                  }),
+                  itemDashboard('Mindful Listening', CupertinoIcons.music_note, Colors.deepOrange, () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const SelectListen()));
+                  }),
+                  itemDashboard('Relax Painting', CupertinoIcons.paintbrush, Colors.indigo, () {}),
+                  itemDashboard('Sudoku', CupertinoIcons.gamecontroller, Colors.pinkAccent, () {}),
+                  itemDashboard('Profile', CupertinoIcons.person, Colors.teal, () {}),
+                  itemDashboard('About', CupertinoIcons.question_circle, Colors.blue, () {}),
                 ],
               ),
             ),
@@ -99,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  itemDashboard(String title, IconData iconData, Color background) => Container(
+  itemDashboard(String title, IconData iconData, Color background, VoidCallback onPressed) => Container(
     decoration: BoxDecoration(
       color: Color.fromARGB(255, 255, 255, 255),
       borderRadius: BorderRadius.circular(10),
@@ -121,10 +117,13 @@ class _HomeScreenState extends State<HomeScreen> {
             color: background,
             shape: BoxShape.circle,
           ),
-          child: Icon(iconData, color: Colors.white)
+          child: Icon(iconData, color: Colors.white),
         ),
         const SizedBox(height: 8),
-        Text(title.toUpperCase(), style: Theme.of(context).textTheme.titleMedium)
+        onPressed == null ? const SizedBox() : TextButton(
+          onPressed: onPressed,
+          child: Text(title.toUpperCase(), style: Theme.of(context).textTheme.titleMedium),
+        ),
       ],
     ),
     

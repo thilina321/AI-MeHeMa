@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projectmehema/chatbot/selectBot.dart';
+import 'package:projectmehema/listening/select_listen.dart';
 import 'package:projectmehema/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -64,8 +67,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   itemDashboard('Videos', CupertinoIcons.play_rectangle, Colors.deepOrange),
                   itemDashboard('Mucis', CupertinoIcons.music_note, Colors.green),
-                  itemDashboard('Talk to me', CupertinoIcons.person_2, Colors.purple),
-                  itemDashboard('Chat to me', CupertinoIcons.chat_bubble_2, Colors.brown),
+                  //itemDashboard('Talk to me', CupertinoIcons.person_2, Colors.purple),
+                  //itemDashboard('Chatbot', CupertinoIcons.chat_bubble_2, Colors.brown),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SelectListen()));
+                    },
+                    child: const Text('Mindful Listening'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SelectBot()));
+                    },
+                    child: const Text('Chatbot'),
+                  ),
                   itemDashboard('Exersice', CupertinoIcons.sportscourt, Colors.indigo),
                   itemDashboard('Game', CupertinoIcons.gamecontroller, Colors.pinkAccent),
                   itemDashboard('Upload', CupertinoIcons.add_circled, Colors.teal),

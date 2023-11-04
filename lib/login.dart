@@ -61,8 +61,7 @@ class _LoginState extends State<Login> {
                     border: OutlineInputBorder(),
                     hintText: 'B ;emE, we;=<;a lrkak', hintStyle: TextStyle(color: Color.fromARGB(120, 0, 0, 0), fontSize: 15, fontFamily: 'FM-Bindumathi') //Enter Email
                   ),
-                  validator: validateEmail,
-                  autovalidateMode: AutovalidateMode.onUserInteraction, 
+                  validator: validateEmail, 
                 ),
           
                 const SizedBox(
@@ -88,8 +87,7 @@ class _LoginState extends State<Login> {
                       return 'Password mustn\'t be more than 15 characters' ;
                     }
                     return null;
-                  },
-                  autovalidateMode: AutovalidateMode.onUserInteraction, 
+                  }, 
                 
                 ),
                 const SizedBox(

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:projectmehema/chatbot/selectBot.dart';
+import 'package:projectmehema/chatbot/select_bot.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class ChatBot extends StatefulWidget {
+  const ChatBot({super.key}); 
   @override
-  _ChatBotState createState() => _ChatBotState();
+  State<ChatBot> createState() => _ChatBotState();
 }
 
 class _ChatBotState extends State<ChatBot> {
@@ -56,23 +57,23 @@ class _ChatBotState extends State<ChatBot> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Result"),
+          title: const Text("Result"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               for (var i = 0; i < questions.length; i++)
                 Text("${questions[i]} ${answers[i]}",
-                  style: TextStyle(fontFamily: 'FM-Bindumathi',fontSize: 15)),
+                  style: const TextStyle(fontFamily: 'FM-Bindumathi',fontSize: 15)),
 
             ],
           ),
           actions: <Widget>[
             TextButton(
-              child: Text("Close"),
+              child: const Text("Close"),
               onPressed: () {
                 Navigator.of(context).pop();
                 Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SelectBot()));
+                  MaterialPageRoute(builder: (context) => const SelectBot()));
               },
             ),
           ],
@@ -86,7 +87,7 @@ class _ChatBotState extends State<ChatBot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Align(
+        title: const Align(
           alignment: AlignmentDirectional(-1.00, -1.00),
           child: Text(
             'AI MeHeMa Chatbot',
@@ -110,15 +111,15 @@ class _ChatBotState extends State<ChatBot> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(-1.00, -1.00),
+                        alignment: const AlignmentDirectional(-1.00, -1.00),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                           child: Column(
                             children: [
                               AutoSizeText(
                                 questions[currentQuestion],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: 'FM-Bindumathi',
                                   fontSize: 26,
                                   fontWeight: FontWeight.bold,
@@ -135,12 +136,12 @@ class _ChatBotState extends State<ChatBot> {
               ),
               for (var option in options[currentQuestion])
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                  padding:const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                   child: Container(
                     width: 225,
                     height: 70,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 57, 145, 218), 
+                      color: const Color.fromARGB(255, 57, 145, 218), 
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextButton( 
@@ -153,7 +154,7 @@ class _ChatBotState extends State<ChatBot> {
                       child: Text(
                         option,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontFamily: 'FMDerana',
                           color: Colors.white,
                           fontSize: 20,

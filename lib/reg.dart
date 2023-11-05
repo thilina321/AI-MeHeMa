@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:projectmehema/customShape.dart';
+import 'package:projectmehema/custom_shape.dart';
 import 'package:projectmehema/home.dart';
 import 'package:projectmehema/login.dart';
 
@@ -41,7 +41,7 @@ class _RegisterPageState extends State<RegisterPage> {
         flexibleSpace: ClipPath(
           clipper: CustomShape(), child: Container(height: 250, width: MediaQuery.of(context).size.width,
           color: const Color.fromARGB(255, 0, 140, 255),
-          child: Center(child: Text("Sign Up", style: TextStyle(color: Colors.white, fontSize: 25),)),
+          child: const Center(child: Text("Sign Up", style: TextStyle(color: Colors.white, fontSize: 25),)),
           ),
         )
       ),
@@ -146,13 +146,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Center(
                   child: Text(
                     errorMessage,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.red,
                       fontSize: 16,
                     ),
@@ -172,19 +172,19 @@ class _RegisterPageState extends State<RegisterPage> {
                           email: emailController.text, 
                           password: passwordController.text)
                         .then((value) {
-                          print("New Account Created!");
+                          //print("New Account Created!");
                           Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => HomeScreen()));
+                            MaterialPageRoute(builder: (context) => const HomeScreen()));
                         }).onError((error, stackTrace) {
-                          print("${error.toString()}");
+                          //print("${error.toString()}");
                           setState(() {
                             errorMessage = 'Email already exists!';
                           });
                         });
                       } catch (e) {
-                        print(e);
+                        //print(e);
                       }
-                    };
+                    }
                     // FirebaseAuth.instance.createUserWithEmailAndPassword(
                     //   email: emailController.text, 
                     //   password: passwordController.text)
@@ -197,15 +197,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     // });
                     
           
-                  print(nameController.text);
-                  print(emailController.text);
-                  print(passwordController.text);
+                  //print(nameController.text);
+                 // print(emailController.text);
+                  //print(passwordController.text);
                   //print(addressController.text);
                   },
           
-                  style: ElevatedButton.styleFrom(minimumSize:Size (20, 50 )),
+                  style: ElevatedButton.styleFrom(minimumSize:const Size (20, 50 )),
           
-                  child: Text(
+                  child: const Text(
                     'Signup',
                     style: TextStyle(
                       fontFamily: 'arial',

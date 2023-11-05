@@ -1,7 +1,9 @@
 
+// ignore_for_file: avoid_print
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:projectmehema/customShape.dart';
+import 'package:projectmehema/custom_shape.dart';
 import 'package:projectmehema/home.dart';
 import 'package:projectmehema/reg.dart';
 
@@ -38,7 +40,7 @@ class _LoginState extends State<Login> {
         flexibleSpace: ClipPath(
           clipper: CustomShape(), child: Container(height: 250, width: MediaQuery.of(context).size.width,
           color: const Color.fromARGB(255, 0, 140, 255),
-          child: Center(child: Text("f,d.a fjuq", style: TextStyle(color: Colors.white, fontSize: 50, fontFamily: 'FM-Gemunu'),)), //Login AppBar
+          child: const Center(child: Text("f,d.a fjuq", style: TextStyle(color: Colors.white, fontSize: 50, fontFamily: 'FM-Gemunu'),)), //Login AppBar
           ),
         ),
       ),
@@ -97,7 +99,7 @@ class _LoginState extends State<Login> {
                 Center(
                   child: Text(
                     errorMessage,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.red,
                       fontSize: 16, fontFamily: 'FM-Bindumathi',
                     ),
@@ -118,9 +120,9 @@ class _LoginState extends State<Login> {
                         .then((value) {
                           print("Login Successfully");
                           Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => HomeScreen()));
+                            MaterialPageRoute(builder: (context) => const HomeScreen()));
                         }).onError((error, stackTrace) {
-                          print("${error.toString()}");
+                          //print("${error.toString()}");
                           setState(() {
                             errorMessage = 'Invalid email or password';
                           });
@@ -128,7 +130,7 @@ class _LoginState extends State<Login> {
                       } catch (e) {
                         print(e);
                       }
-                    };
+                    }
                   //   FirebaseAuth.instance.signInWithEmailAndPassword(
                   //     email: emailController.text, 
                   //     password: passwordController.text)
@@ -148,10 +150,10 @@ class _LoginState extends State<Login> {
                     
                   },
           
-                  style: ElevatedButton.styleFrom(minimumSize:Size (20, 50 ))
+                  style: ElevatedButton.styleFrom(minimumSize:const Size (20, 50 ))
                   ,
           
-                  child: Text(
+                  child: const Text(
                     'f,d.a fjuq', //login button
                     style: TextStyle(
                       fontFamily: 'FM-Gemunu',

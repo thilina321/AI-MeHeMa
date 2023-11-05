@@ -21,7 +21,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void initState() {
-    Duration duration = Duration(seconds: 60000);
+    Duration duration = const Duration(seconds: 60000);
     chatGPT = OpenAI.instance.build(
         token: dotenv.env["API_KEY"],
         baseOption: HttpSetup(receiveTimeout: duration));

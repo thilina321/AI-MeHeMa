@@ -20,16 +20,17 @@ class _SelectBotState extends State<SelectBot> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ChatBot()));
-            }, child: 
-            Text("Chatbot AI MeHeMa", 
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatBot()));
+            },
+             style: ElevatedButton.styleFrom(
+                minimumSize: const Size(180, 80),
+              ), 
+            child: 
+            const Text("Chatbot AI MeHeMa", 
               style: TextStyle(
               fontFamily: 'arial',
               fontSize: 18,)
              ),
-             style: ElevatedButton.styleFrom(
-                minimumSize: Size(180, 80),
-              ),
             ),
           ],
         ),
@@ -38,16 +39,17 @@ class _SelectBotState extends State<SelectBot> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
-            }, child: 
-            Text("Chatbot GPT", 
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ChatScreen()));
+            },
+             style: ElevatedButton.styleFrom(
+                minimumSize: const Size(180, 80),
+              ), 
+          child: 
+            const Text("Chatbot GPT", 
               style: TextStyle(
               fontFamily: 'arial',
               fontSize: 18,)
              ),
-             style: ElevatedButton.styleFrom(
-                minimumSize: Size(180, 80),
-              ),
             ),
           ],
         ),

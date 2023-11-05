@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectmehema/listening/audio/second_interface.dart';
+import 'package:projectmehema/listening/audio/music_emotion_choice.dart';
 //import 'package:projectmehema/listening/audio/second_interface.dart';
 
 class SelectListen extends StatefulWidget {
@@ -13,13 +13,13 @@ class _SelectListenState extends State<SelectListen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Mindful Listening',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
-        iconTheme: IconThemeData(
+        iconTheme:const  IconThemeData(
           color: Colors.white,
         ),
       ),
@@ -35,34 +35,34 @@ class _SelectListenState extends State<SelectListen> {
                 height: 270,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SecondInterface()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectEmotion()));
               },
-              child: Text(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(180, 80),
+              ),
+              child: const Text(
                 'Music Tracks',
                 style: TextStyle(
                   fontSize: 18,
                 ),
               ),
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(180, 80),
-              ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/video/SecondInterface');
               },
-              child: Text(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(180, 80),
+              ),
+              child: const Text(
                 'Music Videos',
                 style: TextStyle(
                   fontSize: 18,
                 ),
-              ),
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(180, 80),
               ),
             ),
           ],

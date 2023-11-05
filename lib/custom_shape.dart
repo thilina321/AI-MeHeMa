@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 class CustomShape extends CustomClipper<Path> {
   @override
   Path getClip(size) {
-    // TODO: implement getClip
     double height = size.height;
     double width = size.width;
 
@@ -19,7 +18,6 @@ class CustomShape extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    // TODO: implement shouldReclip
     return true;
   }
 }//project_customShape

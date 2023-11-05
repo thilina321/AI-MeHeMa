@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:projectmehema/chatbot/selectBot.dart';
+import 'package:projectmehema/chatbot/select_bot.dart';
 import 'package:projectmehema/listening/select_listen.dart';
 import 'package:projectmehema/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -22,9 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.zero,
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color.fromARGB(255, 36, 178, 230),
-              borderRadius: const BorderRadius.only(
+              borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(200),
                 bottomLeft: Radius.circular(200),
               ),
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   contentPadding: const EdgeInsets.symmetric(horizontal: 30),
                   title: Center(
                     child: Text('Hello Welcome!', style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: const Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.bold,
                     ))
                   ),
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-            color: Color.fromARGB(255, 36, 178, 230),
+            color: const Color.fromARGB(255, 36, 178, 230),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               decoration: const BoxDecoration(
@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
             
           ),
           const SizedBox(height: 20),
-          LogoutOption(),
+          logOutOption(),
         ],
       ),
     );
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   itemDashboard(String title, IconData iconData, Color background, VoidCallback onPressed) => Container(
     decoration: BoxDecoration(
-      color: Color.fromARGB(255, 255, 255, 255),
+      color: const Color.fromARGB(255, 255, 255, 255),
       borderRadius: BorderRadius.circular(10),
       boxShadow: [
         BoxShadow(
@@ -120,6 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Icon(iconData, color: Colors.white),
         ),
         const SizedBox(height: 8),
+        // ignore: unnecessary_null_comparison
         onPressed == null ? const SizedBox() : TextButton(
           onPressed: onPressed,
           child: Text(title.toUpperCase(), style: Theme.of(context).textTheme.titleMedium),
@@ -129,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
     
   );
 
- Row LogoutOption() {
+ Row logOutOption() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -138,17 +139,13 @@ class _HomeScreenState extends State<HomeScreen> {
             try {
               await FirebaseAuth.instance.signOut().then((value){
               Navigator.push(context,
-              MaterialPageRoute(builder: (context) => Login()));
+              MaterialPageRoute(builder: (context) => const Login()));
             });
             } catch (e) {
+              // ignore: avoid_print
               print(e);
             }
-            // await FirebaseAuth.instance.signOut().then((value){
-            //   print("Signed Out");
-            //   Navigator.push(context,
-            //   MaterialPageRoute(builder: (context) => Login()));
-            // });
-            setState(() {
+            setState(() { 
               // ignore: avoid_print
               print("Signed Out");
             });

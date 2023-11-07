@@ -101,7 +101,7 @@ class _LoginState extends State<Login> {
                     errorMessage,
                     style: const TextStyle(
                       color: Colors.red,
-                      fontSize: 16, fontFamily: 'FM-Bindumathi',
+                      fontSize: 16,
                     ),
                   ),
                 ),

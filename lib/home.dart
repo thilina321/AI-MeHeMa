@@ -5,7 +5,7 @@ import 'package:projectmehema/chatbot/select_bot.dart';
 import 'package:projectmehema/doc_details/doc_list.dart';
 import 'package:projectmehema/game/main_ui.dart';
 import 'package:projectmehema/listening/audio/music_emotion_choice.dart';
-import 'package:projectmehema/login.dart';
+//import 'package:projectmehema/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:projectmehema/painting/main_ui.dart';
 
@@ -154,8 +154,10 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () async {
             try {
               await FirebaseAuth.instance.signOut().then((value){
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const Login()));
+              // Navigator.push(context,
+              // MaterialPageRoute(builder: (context) => const Login()));
+              Navigator.of(context)
+              .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
             });
             } catch (e) {
               // ignore: avoid_print

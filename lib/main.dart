@@ -32,6 +32,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home:  const Login(),
+      routes: {
+        '/login': (context) => const Login(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }

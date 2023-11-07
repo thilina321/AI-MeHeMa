@@ -45,7 +45,7 @@ class _SelectBotState extends State<SelectBot> {
                 minimumSize: const Size(180, 80),
               ), 
           child: 
-            const Text("Chatbot GPT", 
+            const Text("Chatbot (English)", 
               style: TextStyle(
               fontFamily: 'arial',
               fontSize: 18,)

@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projectmehema/about/about.dart';
 import 'package:projectmehema/chatbot/select_bot.dart';
-import 'package:projectmehema/listening/select_listen.dart';
+import 'package:projectmehema/doc_details/doc_list.dart';
+import 'package:projectmehema/game/main_ui.dart';
+import 'package:projectmehema/listening/audio/music_emotion_choice.dart';
 import 'package:projectmehema/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:projectmehema/painting/main_ui.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -77,18 +81,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   }),
                   itemDashboard('Mindful Listening', CupertinoIcons.music_note, Colors.deepOrange, () {
                     Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SelectListen()));
+                    MaterialPageRoute(builder: (context) => const SelectEmotion()));
                   }),
-                  itemDashboard('Relax Painting', CupertinoIcons.paintbrush, Colors.indigo, () {}),
-                  itemDashboard('Sudoku', CupertinoIcons.gamecontroller, Colors.pinkAccent, () {}),
-                  itemDashboard('Profile', CupertinoIcons.person, Colors.teal, () {}),
-                  itemDashboard('About', CupertinoIcons.question_circle, Colors.blue, () {}),
+                  itemDashboard('Relax Painting', CupertinoIcons.paintbrush, Colors.indigo, () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const RelaxPainting()));
+                  }),
+                  itemDashboard('Fun & Play', CupertinoIcons.gamecontroller, Colors.pinkAccent, () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const FunGame()));
+                  }),
+                  itemDashboard('Professional Help', CupertinoIcons.person, Colors.teal, () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const DocList()));
+                  }),
+                  itemDashboard('About', CupertinoIcons.question_circle, Colors.blue, () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const About()));
+                  }),
                 ],
               ),
             ),
             
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 50),
           logOutOption(),
         ],
       ),

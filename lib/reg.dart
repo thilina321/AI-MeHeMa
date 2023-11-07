@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:projectmehema/custom_shape.dart';
-import 'package:projectmehema/home.dart';
+//import 'package:projectmehema/home.dart';
 import 'package:projectmehema/login.dart';
 
 final _formKey = GlobalKey<FormState>();
@@ -174,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         .then((value) {
                           //print("New Account Created!");
                           Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => const HomeScreen()));
+                            MaterialPageRoute(builder: (context) => const Login()));
                         }).onError((error, stackTrace) {
                           //print("${error.toString()}");
                           setState(() {

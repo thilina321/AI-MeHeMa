@@ -50,20 +50,12 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
-    // if (_isImageSearch) {
-    //   final request = GenerateImage(message.text, 1, size: "256x256");
+    final request = CompleteText(prompt: message.text, model: TextDavinci3Model() );
 
-    //   final response = await chatGPT!.generateImage(request);
-    //   Vx.log(response!.data!.last!.url!);
-    //   insertNewData(response.data!.last!.url!, isImage: true);
-    // } else {
-      
-      final request = CompleteText(prompt: message.text, model: TextDavinci3Model() );
-
-      final response = await chatGPT!.onCompletion(request: request);
-      Vx.log(response!.choices[0].text);
-      insertNewData(response.choices[0].text,);
-    // }
+    final response = await chatGPT!.onCompletion(request: request);
+    Vx.log(response!.choices[0].text);
+    insertNewData(response.choices[0].text,);
+  
   }
 
   void insertNewData(String response) {
@@ -97,12 +89,6 @@ class _ChatScreenState extends State<ChatScreen> {
                 _sendMessage();
               },
             ),
-            // TextButton(
-            //     onPressed: () {
-            //       _isImageSearch = true;
-            //       _sendMessage();
-            //     },
-            //     child: const Text("Generate Image"))
           ],
         ),
       ],
@@ -112,7 +98,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:AppBar(title: const Text("Ai MeHeMa Chatbot")),
+        appBar:AppBar(title: const Text("Chatbot (English)")),
         body: SafeArea(
           child: Column(
             children: [

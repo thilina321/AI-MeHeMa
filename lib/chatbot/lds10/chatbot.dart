@@ -23,6 +23,11 @@ class _ChatBotState extends State<ChatBot> {
     "8 Tng cSj;a úu ms<sn`oj yef`.kafka flfiao@",//SiyaDivi_nasa_Ganeema
     "9 Tn y`vkjdo@",//Farcry_3
     "10 Tnf.a fmkqu flfia o@",//Kathai_Monster
+    "11 Tfí kqreiaik iajNdjh jeäù we;a o@",//nurussana
+    "12 Tnf.a wka wh .ek fidhdne,Su flfiao@",//An aya gana soya baleema
+    "13 Tfí ;SrK .ekSfï yelshdj flfiao@",//Theerana
+    "14 Tnf.a fmkqu flfiao@",//Penuma
+    "15 Tn jev j, ksr;ùu flfiao@",//Wada kireema
   ];
 
   List<List<String>> options = [
@@ -36,6 +41,11 @@ class _ChatBotState extends State<ChatBot> {
     ["ug ishÈú kid .ekSug woyila ke;'", "ug ishÈú kid .ekSug woyila m, jqjo uu tAj l%sh;aul fkdlrñ'", "ug ishÈú kid .ekSug leu;shs'", "wjia:djla ,o fyd;a uu ishÈú kid .ksñ'"],//SiyaDivi_nasa_Ganeema
     ["uu idudkafhka w`vk m%udkh jeä ù ke;'", "uu idudkafhka w`vk m%udkh jeä ù we;'", "uu ieu úgu wvñ'", "ug wvkakg lÿ¿ tka ke;'"],//FarCry_3
     ["uf.a fmkqu fmrg jvd krl hhs fkdis;ñ'", "uf.a fmkqu is;a weo fkd.kakd nj is;ñ'", "ug uf.a fmkqfï is;a weo .kakd iq¿nj ke;s lrk iaÓr fjkialï we;s jk nj yefÕhs'", "uf.a fmkqu le; hhs uu úYajdi lrñ'"],//Kathai_Monster
+    ["uf.a kqreiaik iajNdjh jeäù ke;'","kqreiaik iq¿ nj fmrg jvd jeäù we;'","iEu úgu kqreiaik iq¿ núka miq fjñ'","fmr§ ug kqreiaiq lsisu fohlska ud oeka fkdßiaiqug m;a fkdfõ'"],//Nurussana
+    ["uf.a wka wh .ek fidhd ne,Su k;r ù ke;'","uu fmr ;rï wka wh .ek fidhd n,kafka ke;'","udf.a wka wh .ek fidhd ne,Su fndfydÿrg wvq ù we;'","udf.a wka wh .ek fidhd ne,Su iïmQ¾kfhka wvq ù we;'"],//An ayagana Soyabaleema
+    ["uf.a ;Srk .ekSfï yelshdj fmr mßÈuhs'","fmrg jvd uu ;SrK .ekSu l,aouhs'","ug ;SrK .ekSug fmrg jvd wmyiqhs'","ug lsisu ;SrKhla .ekSug fkdyelshs'"],//Theerana
+    ["uf.a fmkqu fmrg jvd krl hhs fkdis;ñ'","uf.a fmkqu is;a weo fkd.kakd nj is;ñ'","ug uf.a fmkqfï is;a weo .kakd iq¿nj ke;s lrk iaÓr fjkialï we;s jk nj yefÕhs'","uf.a fmkqu le; hhs uu úYajdi lrñ'"],//Penuma
+    ["ug fmr mßÈu jefvys fh§ug mq¿jk'a","jev mgka .ekSug fmr wu;r jEhula fh§ug wjYah fõ'","uu lrk iEu fohlgu úYd, mßY%uhla fh§ug wjYah fõ'","ug lsisjla lsÍug fkdyelsh'"],//Wada kireema
   ];
 
   void nextQuestion() {

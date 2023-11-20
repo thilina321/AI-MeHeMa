@@ -10,7 +10,7 @@ class ChatBot extends StatefulWidget {
 
 class _ChatBotState extends State<ChatBot> {
   int currentQuestion = 0;
-  List<String> answers = List.filled(10, '');
+  List<String> answers = List.filled(21, '');
 
   List<String> questions = [
     "1 Tn lK.dgqfjka miq jkafka o@", //Kanagatuwa
@@ -28,6 +28,12 @@ class _ChatBotState extends State<ChatBot> {
     "13 Tfí ;SrK .ekSfï yelshdj flfiao@",//Theerana
     "14 Tnf.a fmkqu flfiao@",//Penuma
     "15 Tn jev j, ksr;ùu flfiao@",//Wada kireema
+    "16 Tfí kskao flfia o@",//Ninda
+    "17 Tn fjfyig m;a fjkjd o@",//Wehesa
+    "18 Tfí lEu ioyd reÑl;ajh flfia o@",//Kema Ruchikathwaya
+    "19 Tfí nr wvq ù we;a o@",//Bara
+    "20 Tfí fi!LH .ek ìfhka miqjkafka o@",//Health
+    "21 Tfí ldufha fh§u ms<sno reÑl;ajh flfia o@",//Sex
   ];
 
   List<List<String>> options = [
@@ -46,6 +52,12 @@ class _ChatBotState extends State<ChatBot> {
     ["uf.a ;Srk .ekSfï yelshdj fmr mßÈuhs'","fmrg jvd uu ;SrK .ekSu l,aouhs'","ug ;SrK .ekSug fmrg jvd wmyiqhs'","ug lsisu ;SrKhla .ekSug fkdyelshs'"],//Theerana
     ["uf.a fmkqu fmrg jvd krl hhs fkdis;ñ'","uf.a fmkqu is;a weo fkd.kakd nj is;ñ'","ug uf.a fmkqfï is;a weo .kakd iq¿nj ke;s lrk iaÓr fjkialï we;s jk nj yefÕhs'","uf.a fmkqu le; hhs uu úYajdi lrñ'"],//Penuma
     ["ug fmr mßÈu jefvys fh§ug mq¿jk'a","jev mgka .ekSug fmr wu;r jEhula fh§ug wjYah fõ'","uu lrk iEu fohlgu úYd, mßY%uhla fh§ug wjYah fõ'","ug lsisjla lsÍug fkdyelsh'"],//Wada kireema
+    ["ug fmr fuka fyd¢ka ksod .ekSug yelsh'","ug fmr fuka fyd¢ka ksod .ekSug fkdyelsh'","ug idudkH fõ,djg mehlg fyda meh follg l<ska msìfok w;r h<s;a kskaog jeàug fkdyelsh'","ug idudkH fõ,djg l<ska meh lsysmhlg l<ska msìfok w;r h<s;a kskaog jeàug fkdyelsh'"],//Ninda
+    ["uu idudkH ;;ajhg jvd fjfyig m;a fkdfjñ'","uu fmrg jvd blaukska úvdjg m;afjñ'","uu lrk iEu fohlskau mdfya úvdjg m;a fjñ'","uu lsisu fohla lr .ekSug neß jk f,i fjfyig m;a ù isáñ'"],//Wehesa
+    ["uf.a lEu reÑh fmr fuka we;'","uf.a lEu reÑh fmr ;rï fyd| ke;'","ud yg lEu wreÑhla we;'","ud yg lEu reÑhla we;af;au ke;'"],//Kema Ruchikathwaya
+    ["uf.a nr miq.sh jljdkqfõ wvq ù ke;'","uf.a nr rd;a;,a lsf,da .%Eï myg jvd wvq ù we;'","uf.a nr rd;a;,a lsf,da .%Eï oyhg jvd wvq ù we;'","uf.a nr rd;a;,a lsf,da .%Eï myf,djg jvd wvq ù we;'","uf.a nr wvq lr .ekSu Wfoid wvqfjka wdydr .ksñ'"],//Bara
+    ["uu fmrg jvd fi!LH .ek ìfhka miq fkdfjñ'","uu fõokd yd lelal=ï ms<sn|j fyda WordndO fyda u, noaOh jeks foa .ek ìfhka miq fjñ'","uu uf.a fi!LH ;;a;ajh .ek b;d ìfhka miq fjñ' ug tA yer fjk lsis fohla is;Sug wmyiqh'","uu uf.a fi!LH .ek fld;rï ìho h;fyd;a lsisjla is;Sug neßh'"],//Health
+    ["fjkila uE;l§ isÿù ke;'","fmrg jvd leue;a; wvq ù we;'","fmrg jvd leue;a; fndfyda fia wvqù we;'","ug lsisÿ leue;a;la ke;'"],//Sex
   ];
 
   void nextQuestion() {

@@ -10,7 +10,7 @@ class ChatBot extends StatefulWidget {
 
 class _ChatBotState extends State<ChatBot> {
   int currentQuestion = 0;
-  List<String> answers = List.filled(10, '');
+  List<String> answers = List.filled(15, '');
 
   List<String> questions = [
     "1 Tn lK.dgqfjka miq jkafka o@", //Kanagatuwa

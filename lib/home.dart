@@ -9,7 +9,6 @@ import 'package:projectmehema/listening/audio/music_emotion_choice.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:projectmehema/painting/main_ui.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -18,7 +17,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,16 +37,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 30),
                   title: Center(
-                    child: Text('Hello Welcome!', style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                      fontWeight: FontWeight.bold,
-                    ))
-                  ),
-                  subtitle: Center( 
-                    child: Text('Have A Nice Day', style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Colors.white54
-                    ))
-                  ),
+                      child: Text('iqn ojila fõjdæ',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                                fontSize: 50,
+                                fontFamily: 'FM-Gemunu', //Suba Dawasak Wewa
+                              ))),
+                  subtitle: Center(
+                      child: Text('idorfhka ms<s.ksuq',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(
+                                  color: Colors.white54,
+                                  fontFamily: 'FMDerana',
+                                  fontSize: 25))), //Sadarayen piliganimu
                   // trailing: const CircleAvatar(
                   //   radius: 30,
                   //   backgroundImage: AssetImage(''),
@@ -75,34 +81,55 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisSpacing: 40,
                 mainAxisSpacing: 30,
                 children: [
-                  itemDashboard('Chatbot', CupertinoIcons.chat_bubble_2, Colors.purple, () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SelectBot()));
+                  itemDashboard('peÜ fndÜ', CupertinoIcons.chat_bubble_2,
+                      Colors.purple, //Chatbot
+                      () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SelectBot()));
                   }),
-                  itemDashboard('Mindful Listening', CupertinoIcons.music_note, Colors.deepOrange, () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SelectEmotion()));
+                  itemDashboard('ijka', CupertinoIcons.music_note,
+                      Colors.deepOrange, //Mindful Listening
+                      () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SelectEmotion()));
                   }),
-                  itemDashboard('Relax Painting', CupertinoIcons.paintbrush, Colors.indigo, () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const RelaxPainting()));
+                  itemDashboard('is;a;ï', CupertinoIcons.paintbrush,
+                      Colors.indigo, //Relax Painting
+                      () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RelaxPainting()));
                   }),
-                  itemDashboard('Fun & Play', CupertinoIcons.gamecontroller, Colors.pinkAccent, () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const FunGame()));
+                  itemDashboard('fi,a,ï', CupertinoIcons.gamecontroller,
+                      Colors.pinkAccent, //Fun & Play
+                      () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FunGame()));
                   }),
-                  itemDashboard('Professional Help', CupertinoIcons.person, Colors.teal, () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const DocList()));
+                  itemDashboard('jD;a;Sh Wmldr', CupertinoIcons.person,
+                      Colors.teal, //Professional Help
+                      () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DocList()));
                   }),
-                  itemDashboard('About', CupertinoIcons.question_circle, Colors.blue, () {
+                  itemDashboard('wms .ek', CupertinoIcons.question_circle,
+                      Colors.blue, //About
+                      () {
                     Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const About()));
+                        MaterialPageRoute(builder: (context) => const About()));
                   }),
                 ],
               ),
             ),
-            
           ),
           const SizedBox(height: 50),
           logOutOption(),
@@ -111,66 +138,79 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  itemDashboard(String title, IconData iconData, Color background, VoidCallback onPressed) => Container(
-    decoration: BoxDecoration(
-      color: const Color.fromARGB(255, 255, 255, 255),
-      borderRadius: BorderRadius.circular(10),
-      boxShadow: [
-        BoxShadow(
-          offset: const Offset(0, 5),
-          color: Theme.of(context).primaryColor.withOpacity(.2),
-          spreadRadius: 2,
-          blurRadius: 5
-        )
-      ]
-    ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: background,
-            shape: BoxShape.circle,
-          ),
-          child: Icon(iconData, color: Colors.white),
+  itemDashboard(String title, IconData iconData, Color background,
+          VoidCallback onPressed) =>
+      Container(
+        decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 255, 255, 255),
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                  offset: const Offset(0, 5),
+                  color: Theme.of(context).primaryColor.withOpacity(.2),
+                  spreadRadius: 2,
+                  blurRadius: 5)
+            ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: background,
+                shape: BoxShape.circle,
+              ),
+              child: Icon(iconData, color: Colors.white),
+            ),
+            const SizedBox(height: 8),
+            // ignore: unnecessary_null_comparison
+            onPressed == null
+                ? const SizedBox()
+                : TextButton(
+                    onPressed: onPressed,
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                        fontFamily: 'FM-Bindumathi',
+                        fontSize: 20,
+                      ),
+                      textAlign: TextAlign.center,
+                    )),
+          ],
         ),
-        const SizedBox(height: 8),
-        // ignore: unnecessary_null_comparison
-        onPressed == null ? const SizedBox() : TextButton(
-          onPressed: onPressed,
-          child: Text(title.toUpperCase(), style: Theme.of(context).textTheme.titleMedium),
-        ),
-      ],
-    ),
-    
-  );
+      );
 
- Row logOutOption() {
+  Row logOutOption() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
           onPressed: () async {
             try {
-              await FirebaseAuth.instance.signOut().then((value){
-              // Navigator.push(context,
-              // MaterialPageRoute(builder: (context) => const Login()));
-              Navigator.of(context)
-              .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
-            });
+              await FirebaseAuth.instance.signOut().then((value) {
+                // Navigator.push(context,
+                // MaterialPageRoute(builder: (context) => const Login()));
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/login', (Route<dynamic> route) => false);
+              });
             } catch (e) {
               // ignore: avoid_print
               print(e);
             }
-            setState(() { 
+            setState(() {
               // ignore: avoid_print
               print("Signed Out");
             });
           },
-          child: const Text('Logout'),
+          child: const Text(
+            'bj;a jkak',
+            style: TextStyle(
+              fontFamily: "FM-Gemunu",
+              fontSize: 20,
+            ),
+          ), //Logout
         ),
       ],
-    ); 
-}
+    );
+  }
 }
